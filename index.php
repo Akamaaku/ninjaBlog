@@ -81,5 +81,6 @@
 				    $('[data-toggle="tooltip"]').tooltip();   
 				});
 			</script>
+			<?php include('footer.html') ?>
 		</body>
 		</html>

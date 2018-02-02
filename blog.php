@@ -57,13 +57,13 @@
 		<div class='jumbotron bg-dark text-danger'>
 			<div class="card bg-dark">
 				<div class="card-header">
-					<h3><a class="card-link text-danger" data-toggle= "collapse" data-parent="#recentPosts" href="#collapse<?= $counter?>"><?= $row['title']?></a>
+					<h3><a class="card-link text-danger" data-toggle= "collapse" data-parent="#recentPosts" href="#collapse"><?= $row['title']?></a>
 					</h3>
 					<p class='date'><?= date("F d, Y g:i a",strtotime($row['dateCreated']))?>
 						<a href="edit.php"><span class='badge badge-light float-right'>Edit</span></a>
 					</p>
 				</div>
-				<div id="collapse<?= $counter ?>" class="collapse show">
+				<div id="collapse" class="collapse show">
 					<div class="card-body text-dark bg-secondary">
 						<p class='blog'>
 							<?= $row['content']?>	
@@ -79,5 +79,6 @@
 			    $('[data-toggle="tooltip"]').tooltip();   
 			});
 		</script>
+		<?php include('footer.html') ?>
 </body>
 </html>

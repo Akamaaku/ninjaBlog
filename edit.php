@@ -59,7 +59,6 @@
 				if($valid)
 				{
 					$updateStatement->execute();
-					echo "I am in here!";
 					header('Location: index.php');
 				}
 				else
@@ -121,7 +120,7 @@
 	</div>
 	<div class='container bg-danger text-left'>
 		<div class='jumbotron bg-dark text-danger'>
-			<form method="post" action="">
+			<form method="post" action="#">
 				<input type="hidden" name="id" value="<?=$row['postID']?>" />
 				<div class="form-group">
 					<label for= "title">Title</label>
@@ -142,5 +141,6 @@
 			<?php endif?>
 		</div>
 	</div>
+	<?php include('footer.html') ?>
 </body>
 </html>
