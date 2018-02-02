@@ -1,0 +1,39 @@
+body{
+	background:url('images/ninjabike.jpg'); 
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.container{
+	margin:0 auto;
+	width: 700px;
+	text-align: left;
+	color: white;
+	background:rgba(20, 20, 20, 0.5);
+}
+
+.navigation ul
+{
+	margin:0 auto;
+	display: inline-block;
+	list-style: none;
+}
+.navigation ul li
+{
+	display: inline;
+}
+
+a
+{
+	color:#3dd;
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: none;
+}
+a:link
+{
+	text-decoration: none;
+}
