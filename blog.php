@@ -14,7 +14,7 @@
 		{
 			$id = $validItem;
 
-			$blogQuery = "SELECT postID, title, dateCreated, content FROM blog WHERE postID = :id LIMIT 1";
+			$blogQuery = "SELECT postID, title, timestamp, content FROM blog WHERE postID = :id LIMIT 1";
 			$blogStatement = $db->prepare($blogQuery);
 			$blogStatement->bindValue('id', $id, PDO::PARAM_INT);
 			$blogStatement->execute();
@@ -59,7 +59,7 @@
 				<div class="card-header">
 					<h3><a class="card-link text-danger" data-toggle= "collapse" data-parent="#recentPosts" href="#collapse"><?= $row['title']?></a>
 					</h3>
-					<p class='date'><?= date("F d, Y g:i a",strtotime($row['dateCreated']))?>
+					<p class='date'><?= date("F d, Y g:i a",strtotime($row['timestamp']))?>
 						<a href="edit.php"><span class='badge badge-light float-right'>Edit</span></a>
 					</p>
 				</div>

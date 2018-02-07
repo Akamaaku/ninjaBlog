@@ -6,7 +6,7 @@
 **/
 	require('connect.php');
 	$counter = 0;
-	$query = "SELECT postID, title, dateCreated, content, dateModified FROM blog ORDER BY dateCreated DESC";
+	$query = "SELECT postID, title, timestamp, content, dateModified FROM blog ORDER BY timestamp DESC";
 
 	$statement = $db->prepare($query);
 
@@ -48,7 +48,7 @@
 								<h3><a class="card-link text-danger" data-toggle= "collapse" data-parent="#recentPosts" href="#collapse<?= $counter?>"><?= $row['title']?></a>
 								</h3>
 
-								<p class='date'><?= date("F d, Y g:i a",strtotime($row['dateCreated']))?>
+								<p class='date'><?= date("F d, Y g:i a",strtotime($row['timestamp']))?>
 									<a href="edit.php?id=<?=$row['postID']?>"><span class='badge badge-light float-right'>Edit</span></a>
 								</p>
 							</div>

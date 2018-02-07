@@ -20,12 +20,12 @@
 			$content = filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 			$currentDate = date('Y-m-d H:i:s');
 
-			$newQuery = "INSERT INTO blog (title, dateCreated, content) VALUES (:title, :dateCreated, :content)";
+			$newQuery = "INSERT INTO blog (title, timestamp, content) VALUES (:title, :timestamp, :content)";
 
 			$newStatement = $db->prepare($newQuery);
 			///Bind values have PDO for columns that have parameters in the database.
 			$newStatement->bindValue(':title', $title, PDO::PARAM_STR);
-			$newStatement->bindValue(':dateCreated', $currentDate);
+			$newStatement->bindValue(':timestamp', $currentDate);
 			$newStatement->bindValue(':content', $content);
 
 			///strlen gets the character count.

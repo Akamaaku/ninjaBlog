@@ -38,10 +38,10 @@
 
 			if(isset($_POST['submit1']))
 			{
-				$updateQuery = "UPDATE blog SET title = :title, dateModified = :dateModified, content = :content WHERE postID = :id LIMIT 1";
+				$updateQuery = "UPDATE blog SET title = :title, timestamp = :timestamp, content = :content WHERE postID = :id LIMIT 1";
 				$updateStatement = $db->prepare($updateQuery);
 				$updateStatement->bindValue(':title', $title, PDO::PARAM_STR);
-				$updateStatement->bindValue(':dateModified', $currentDate);
+				$updateStatement->bindValue(':timestamp', $currentDate);
 				$updateStatement->bindValue(':content', $content);
 				$updateStatement->bindValue(':id', $id, PDO::PARAM_INT);				
 				///strlen gets the character count.
